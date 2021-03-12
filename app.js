@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors([
   'http://127.0.0.1:5500', //local host for front end
-  // 'http://blog.patrickcs.com/' //production site
+  'http://notes.patrickcs.com/' //production site
 ]));
 
 app.use('/', indexRouter);
