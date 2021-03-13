@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var NoteSchema = new Schema(
     {
         name: {type: String, required: true, maxlength: 100},
-        description: {type: String, required: true, maxlength: 1000},
+        description: {type: String, required: true, maxlength: 10000},
         folder: {type: Schema.Types.ObjectId, ref: 'Folder', required: true},
     }
 )

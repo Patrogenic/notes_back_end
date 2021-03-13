@@ -86,8 +86,9 @@ exports.folders_get = function(req, res){
         if(err){
             res.sendStatus(403);
         }else{
-            Folder.find({user: authData.user._id}).exec(function(err, folders){
+            Folder.find({user: authData.user._id}).sort({'name': 1}).exec(function(err, folders){
                 let folderData = [];
+                console.log(folders);
                 folders.forEach(folder => {
                     Note.find({folder: folder.id}).exec(function(err, notes){
                         folderData.push({
